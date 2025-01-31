@@ -4,7 +4,7 @@ import urllib.parse
 
 # Load student data from the JSON file
 def load_data():
-    with open('./api/q-vercel-python.json', 'r') as file:
+    with open('q-vercel-python.json', 'r') as file:
         data = json.load(file)
     return data
 
@@ -32,9 +32,6 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.send_header('Access-Control-Allow-Origin', '*')  # Enable CORS for any origin
-        self.send_header('Access-Control-Allow-Origin', '*')  
-        self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')  
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         self.end_headers()
 
         # Send the JSON response
